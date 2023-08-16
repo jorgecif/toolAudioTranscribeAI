@@ -9,19 +9,6 @@ from tempfile import NamedTemporaryFile
 
 
 
-# Variables para guardar datos de sesión
-
-if 'puntaje_mas_alto' not in st.session_state:
-    st.session_state.puntaje_mas_alto = 0
-
-if 'puntaje_guardado' not in st.session_state:
-    st.session_state.puntaje_guardado = 0
-    
-
-
-# Parámetros
-puntaje_mayor = 0
-
 
 st.set_page_config(
     page_title="Herramientas AI - Qüid Lab",
@@ -36,15 +23,6 @@ nlp = spacy.load("en_core_web_sm")
 
 
 
-# Oculto botones de Streamlit
-hide_streamlit_style = """
-				<style>
-				#MainMenu {visibility: hidden;}
-
-				footer {visibility: hidden;}
-				</style>
-				"""
-st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 
 # Funciones
 def success():
