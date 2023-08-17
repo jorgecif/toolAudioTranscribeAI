@@ -22,7 +22,15 @@ st.set_page_config(
 nlp = spacy.load("en_core_web_sm")
 
 
+# Oculto botones de Streamlit
+hide_streamlit_style = """
+				<style>
+				#MainMenu {visibility: hidden;}
 
+				footer {visibility: hidden;}
+				</style>
+				"""
+st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 
 # Funciones
 def success():
