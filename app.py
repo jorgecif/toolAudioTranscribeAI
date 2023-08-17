@@ -1,6 +1,5 @@
 import streamlit as st
 import PIL.Image
-import spacy
 from streamlit_option_menu import option_menu
 from streamlit_extras.let_it_rain import rain
 import whisper
@@ -16,11 +15,6 @@ st.set_page_config(
     layout="centered",
     initial_sidebar_state="expanded",
 )
-
-# Parametros NLP
-#nlp = spacy.load("en_core_web_lg")
-nlp = spacy.load("en_core_web_sm")
-
 
 # Oculto botones de Streamlit
 hide_streamlit_style = """
@@ -44,15 +38,6 @@ def success():
 
 
 
-
-def adivinar_prompt(prompt_adivinado, prompt_real):
-    frase1 = prompt_adivinado
-    frase2 = prompt_real
-    fra1 = nlp(frase1)
-    fra2 = nlp(frase2)
-    similitud_frases = fra1.similarity(fra2)
-    puntaje_actual = similitud_frases
-    return puntaje_actual
 
 
 # Logo sidebar
